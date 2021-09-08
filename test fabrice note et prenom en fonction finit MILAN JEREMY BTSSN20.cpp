@@ -2,19 +2,19 @@
 #include <stdio.h>
 
 /*
-Milan Jérémy 07/09/2021
+Milan JÃ©rÃ©my 07/09/2021
 */
 
 /*
-Lire les prénoms et les notes des élèves de la classe, tant que le prénom saisi est différent de: 
-« XAEA-XII ». Vérifier que la note saisie soit comprise entre 0 et 20.
+Lire les prÃ©noms et les notes des Ã©lÃ¨ves de la classe, tant que le prÃ©nom saisi est diffÃ©rent de: 
+Â« XAEA-XII Â». VÃ©rifier que la note saisie soit comprise entre 0 et 20.
 Afficher ensuite: 
 la moyenne de la classe
-la meilleure note de la classe et le prénom correspondant.
-la moins bonne note de la classe et le prénom correspondant.
+la meilleure note de la classe et le prÃ©nom correspondant.
+la moins bonne note de la classe et le prÃ©nom correspondant.
 */
 
-//Déclaration des variables
+//DÃ©claration des variables
 char error_prenom[99] = "XAEA-XII";
 char prenom[99] = "";
 char best_prenom[99]= "";
@@ -24,7 +24,7 @@ float moyenne = 0;
 float worst_note = 21;
 float note,best_note,nb_note,nb_student = 0;
 
-//Demande un prenom et une note à l'utilisateur
+//Demande un prenom et une note Ã  l'utilisateur
 void name_ask ()
 {
 	printf("\n");
@@ -36,7 +36,7 @@ void name_ask ()
 	error_i=0;
 }
 
-// Vérifie si la nouvelle note est encore meilleur que la meilleur note si oui alors on stock le prenom et la note comme nouvelle meilleur note 
+// VÃ©rifie si la nouvelle note est encore meilleur que la meilleur note si oui alors on stock le prenom et la note comme nouvelle meilleur note 
 void lower_check ()
 {
 if(note < worst_note)
@@ -54,7 +54,7 @@ if(note < worst_note)
 i=0;
 }
 
-// Vérifie si la nouvelle note est encore moin bonne que la pire note si oui alors on stock le prenom et la note comme nouvelle pire note 
+// VÃ©rifie si la nouvelle note est encore moin bonne que la pire note si oui alors on stock le prenom et la note comme nouvelle pire note 
 void higher_check()
 {
 if(note > best_note)
@@ -80,7 +80,7 @@ nb_student++;
 moyenne = nb_note / nb_student;
 }
 
-//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur
+//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son dÃ©tenteur, La meilleur note et son dÃ©tenteur
 void print_all_info()
 {
 printf("\n\nLa moyenne de la classe est de : ");
@@ -93,7 +93,7 @@ printf(" %.2f obtenue par : ",best_note);
 printf("%s",best_prenom);
 }
 
-//Vérifie si la note est corect si non alors on redemande un prenom et une note
+//VÃ©rifie si la note est corect si non alors on redemande un prenom et une note
 void mark_check()
 {
 		if (note >20 || note <0)
@@ -107,7 +107,7 @@ void mark_check()
 			}	
 }
 
-//Vérifie si le prenom est corect si non alors on retourne erreur prenom
+//VÃ©rifie si le prenom est corect si non alors on retourne erreur prenom
 void name_check()
 {
 	while (prenom[i]!= '\0')
@@ -133,44 +133,42 @@ void name_check()
 		}
 }
 
-//Vérifie si la note et le prenom son bon 
+//VÃ©rifie si la note et le prenom son bon 
 void name_mark_check()
 {
 do
 	{
-	name_ask();//Demande un prenom et une note à l'utilisateur
+	name_ask();//Demande un prenom et une note Ã  l'utilisateur
 	
-	name_check();//Vérifie si le prenom est corect si non alors on ferme le programme
+	name_check();//VÃ©rifie si le prenom est corect si non alors on ferme le programme
 	
 	if(errorp == 1 )
 	{
 	return ;
 	}
 	
-	mark_check();//Vérifie si la note est corect si non alors on redemande un prenom et une note	
+	mark_check();//VÃ©rifie si la note est corect si non alors on redemande un prenom et une note	
 	}
 while (errorn == 1 || errorp == 1 );
 i=0;
 }
-
+//main du programme coupe la console une fois arrivÃ© a la fin du programme
 int main(int argc, char** argv) 
 {
-	
 while (errorp != 1 )
 	{
-	name_mark_check();//Vérifie si la note et le prenom son bon 
+	name_mark_check();//VÃ©rifie si la note et le prenom son bon 
 
 	if(errorp == 0 )
 		{
+		lower_check();// VÃ©rifie si la nouvelle note est encore meilleur que la meilleur note si oui alors on stock le prenom et la note comme nouvelle meilleur note.
+		
+		higher_check();// VÃ©rifie si la nouvelle note est encore moin bonne que la pire note si oui alors on stock le prenom et la note comme nouvelle pire note.
+		
+		do_average();//Calcule la moyenne des notes des Ã©leves.
 
-		lower_check();// Vérifie si la nouvelle note est encore meilleur que la meilleur note si oui alors on stock le prenom et la note comme nouvelle meilleur note.
-
-		higher_check();// Vérifie si la nouvelle note est encore moin bonne que la pire note si oui alors on stock le prenom et la note comme nouvelle pire note.
-
-		do_average();//Calcule la moyenne des notes des éleves.
-	
-		print_all_info();//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur.
+		print_all_info();//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son dÃ©tenteur, La meilleur note et son dÃ©tenteur.
 		}
 	}
-print_all_info();//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur.
+print_all_info();//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son dÃ©tenteur, La meilleur note et son dÃ©tenteur.
 }
