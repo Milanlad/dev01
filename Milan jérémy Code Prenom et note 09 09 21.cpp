@@ -2,20 +2,20 @@
 #include <stdio.h>
 #include <string.h>
 /*
-Milan Jérémy 07/09/2021
+Milan JÃ©rÃ©my 07/09/2021
 */
 
 /*
-Lire les prénoms et les notes des élèves de la classe, tant que le prénom saisi est différent de: 
-« XAEA-XII ». Vérifier que la note saisie soit comprise entre 0 et 20.
+Lire les prÃ©noms et les notes des Ã©lÃ¨ves de la classe, tant que le prÃ©nom saisi est diffÃ©rent de: 
+Â« XAEA-XII Â». VÃ©rifier que la note saisie soit comprise entre 0 et 20.
 Afficher ensuite: 
 la moyenne de la classe
-la meilleure note de la classe et le prénom correspondant.
-la moins bonne note de la classe et le prénom correspondant.
+la meilleure note de la classe et le prÃ©nom correspondant.
+la moins bonne note de la classe et le prÃ©nom correspondant.
 */
 
 
-//Déclaration des variables
+//DÃ©claration des variables
 char error_prenom[99] = "XAEA-XII";
 char prenom[99] = "";
 char best_prenom[99]= "";
@@ -32,8 +32,7 @@ while (i!=2)
 {
 do
 	{
-		
-	//Demande un prenom et une note à l'utilisateur
+	//Demande un prenom et une note Ã  l'utilisateur
 	printf("\n");
 	printf("\nSaisir un prenom : ");
 	scanf("%s",&prenom);
@@ -48,7 +47,7 @@ do
 		return 0;
 		}
 	
-	//Vérifie si le prenom est corect si non alors on ferme le programme
+	//VÃ©rifie si le prenom est corect si non alors on ferme le programme
 	while (prenom[i]!= '\0')
 		{
 		if (prenom[i]== error_prenom[i])
@@ -71,7 +70,7 @@ do
 		{
 		errorp=0;
 		
-		//Vérifie si la note est corect si non alors on redemande un prenom et une note
+		//VÃ©rifie si la note est corect si non alors on redemande un prenom et une note
 		if (note >20 || note <0)
 			{
 			printf("\nC'est pas une note corect ");
@@ -86,7 +85,7 @@ do
 while (errorn == 1 || errorp == 1);
 i=0;
 
-// Vérifie si la nouvelle note est encore meilleur que la meilleur note si oui alors on stock le prenom et la note comme nouvelle meilleur note 
+// VÃ©rifie si la nouvelle note est encore meilleur que la meilleur note si oui alors on stock le prenom et la note comme nouvelle meilleur note 
 if(note > best_note)
 	{
 	memset(best_prenom, ' ', 99);
@@ -102,7 +101,7 @@ if(note > best_note)
 	}
 i=0;
 
-// Vérifie si la nouvelle note est encore moin bonne que la pire note si oui alors on stock le prenom et la note comme nouvelle pire note 
+// VÃ©rifie si la nouvelle note est encore moin bonne que la pire note si oui alors on stock le prenom et la note comme nouvelle pire note 
 if(note < worst_note)
 	{
 	memset(worst_prenom, ' ', 99);
@@ -118,7 +117,7 @@ if(note < worst_note)
 	}
 i=0;
 
-//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur
+//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son dÃ©tenteur, La meilleur note et son dÃ©tenteur
 nb_note = nb_note + note;
 nb_student++;
 moyenne = nb_note / nb_student;
