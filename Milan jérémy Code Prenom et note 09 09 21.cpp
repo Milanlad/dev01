@@ -14,7 +14,6 @@ la meilleure note de la classe et le prénom correspondant.
 la moins bonne note de la classe et le prénom correspondant.
 */
 
-
 //Déclaration des variables
 char error_prenom[99] = "XAEA-XII";
 char prenom[99] = "";
