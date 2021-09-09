@@ -165,11 +165,11 @@ i=0;
 //main du programme coupe la console une fois arrivé a la fin du programme
 int main(int argc, char** argv) 
 {
-while (errorp != 1 )
+while (errorp != 1 )// si le mauvais prenom est rentree on ne boucle plus et on affiche une derniere fois toute les info avant de fermer le programme.
 	{
-	name_mark_check();//Vérifie si la note et le prenom son bon 
+	name_mark_check();//Vérifie si la note et le prenom son bon.
 
-	if(errorp == 0 )
+	if(errorp == 0 ) // si le mauvais prenom est rentrée alors on esquive toute les procedure afin de ne pas impacter les notes.
 		{
 		lower_check();// Vérifie si la nouvelle note est encore meilleur que la meilleur note si oui alors on stock le prenom et la note comme nouvelle meilleur note.
 		
@@ -177,8 +177,8 @@ while (errorp != 1 )
 		
 		do_average();//Calcule la moyenne des notes des éleves.
 
-		print_all_info();//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur.
+		print_all_info();//Fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur.
 		}
 	}
-print_all_info();//Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur.
+print_all_info();//Fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur.
 }
