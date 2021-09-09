@@ -24,6 +24,7 @@ float moyenne = 0;
 float worst_note = 21;
 float note,best_note,nb_note,nb_student = 0;
 
+
 //Demande un prenom et une note à l'utilisateur
 void name_ask ()
 {
@@ -35,6 +36,7 @@ void name_ask ()
 	i=0;
 	error_i=0;
 }
+
 
 // Vérifie si la nouvelle note est encore meilleur que la meilleur note si oui alors on stock le prenom et la note comme nouvelle meilleur note 
 void lower_check ()
@@ -54,6 +56,7 @@ if(note < worst_note)
 i=0;
 }
 
+
 // Vérifie si la nouvelle note est encore moin bonne que la pire note si oui alors on stock le prenom et la note comme nouvelle pire note 
 void higher_check()
 {
@@ -72,6 +75,7 @@ if(note > best_note)
 i=0;
 }
 
+
 //calcule la moyenne
 void do_average()
 {
@@ -79,6 +83,7 @@ nb_note = nb_note + note;
 nb_student++;
 moyenne = nb_note / nb_student;
 }
+
 
 //Effectue la moyenne de toute les notes et fait le print de : la moyenne , La pire note et son détenteur, La meilleur note et son détenteur
 void print_all_info()
@@ -93,6 +98,7 @@ printf(" %.2f obtenue par : ",best_note);
 printf("%s",best_prenom);
 }
 
+
 //Vérifie si la note est corect si non alors on redemande un prenom et une note
 void mark_check()
 {
@@ -106,6 +112,7 @@ void mark_check()
 			errorn = 0;
 			}	
 }
+
 
 //Vérifie si le prenom est corect si non alors on retourne erreur prenom
 void name_check()
@@ -133,6 +140,7 @@ void name_check()
 		}
 }
 
+
 //Vérifie si la note et le prenom son bon 
 void name_mark_check()
 {
@@ -152,6 +160,8 @@ do
 while (errorn == 1 || errorp == 1 );
 i=0;
 }
+
+
 //main du programme coupe la console une fois arrivé a la fin du programme
 int main(int argc, char** argv) 
 {
